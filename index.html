@@ -6,6 +6,13 @@
     <title>Purchanse</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+  <style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
   <body>
     <div class="container">
       &nbsp;
@@ -42,10 +49,26 @@
       </div>
 
       <h3>Contact Information</h3>
-      <input class="box" type="text" name="name" placeholder="Name" />
-      <input class="box" type="text" name="name" placeholder="Name" />
-      <input class="box" type="text" name="name" placeholder="Name" />
       <br />
+      <form id="form">
+        <div class="form-control">
+          <input type="text" placeholder="Name" id="username" required />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <input id="email" type="email" placeholder="Email" required />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <input
+            id="number"
+            type="number"
+            placeholder="Contact Number"
+            required
+          />
+          <small>Error message</small>
+        </div>
+      </form>
       <h3>Delivery Details</h3>
       <div class="note">
         <p><strong>Note:</strong></p>
@@ -58,7 +81,9 @@
         cols="50"
         placeholder="eg: No Plastic bag"
       ></textarea>
-      <button class="check-out-button">Purchase Order</button>
+      <button onclick="onSubmit()" class="check-out-button">
+        Purchase Order
+      </button>
     </div>
     <script src="main.js"></script>
   </body>
